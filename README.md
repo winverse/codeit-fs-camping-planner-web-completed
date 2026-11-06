@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js TypeScript Completed
 
-## Getting Started
+이 프로젝트는 캠핑 플래너 API를 호출하는 Next.js 화면을 TypeScript로 만든 최종 상태입니다. 첫 화면(`/`)에서 캠핑장 목록을 반려동물 동반 여부로 걸러 보고, 상세 화면(`/campsites/[id]`)에서 캠핑장 정보를 확인한 뒤 캠핑 계획을 추가하며, 내 캠핑 계획 화면(`/trips`)에서 계획의 상태와 평점을 바꿉니다. 서버 데이터 요청은 `src/lib/api.ts`의 함수와 TanStack Query 훅이 맡고, 스타일은 vanilla-extract(`*.css.ts`)로 작성했습니다.
 
-First, run the development server:
+## 최종 구조
+
+- `src/app/`: App Router의 경로 파일(`page.tsx`)과 공통 레이아웃(`layout.tsx`)
+- `src/features/campsites/`: 캠핑장 목록·카드·상세 화면 컴포넌트와 캠핑장 조회 훅(`hooks/`)
+- `src/features/trips/`: 캠핑 계획 추가 폼, 계획 목록·카드, 평점 컴포넌트와 계획 조회·수정 훅(`hooks/`)
+- `src/components/`: 버튼·입력란·패널·알림 막대 같은 공통 컴포넌트와 전체 레이아웃(`layouts/GlobalLayout/`)
+- `src/lib/`: API 요청 함수(`api.ts`), 쿼리 키(`queryKeys.ts`), 목록 필터 변환 함수
+- `src/providers/`, `src/contexts/`: TanStack Query의 `QueryClientProvider`와 알림 메시지 컨텍스트
+- `src/types/`, `src/constants/`: API 응답·요청 타입과 캠핑 계획 상태 상수
+- `src/styles/`: 테마 변수와 전역 스타일
+
+## 시작하기
+
+1. API 서버 프로젝트(`codeit-fs-express-typescript-completed`)를 그 저장소의
+   README대로 실행합니다. 캠핑장 동기화(`pnpm campsites:sync`)까지 마쳐야 목록에
+   캠핑장이 보입니다.
+
+2. `.env.local`의 `NEXT_PUBLIC_API_URL`이 API 서버 주소와 같은지 확인합니다. API
+   서버를 기본 포트로 실행했다면 바꿀 필요가 없습니다.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_API_URL=http://localhost:4000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 의존성을 설치합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. 개발 서버를 실행합니다.
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. 브라우저에서 `http://localhost:3000`에 접속하면 캠핑장 목록이 보입니다. 카드를
+   눌러 상세 화면의 캠핑 계획 추가 폼에서 계획을 추가하고, 위쪽의 내 캠핑 계획
+   메뉴에서 추가한 계획을 확인합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 확인하기
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+타입 오류는 아래 명령으로 확인합니다. `next typegen`이 경로 타입을 만든 뒤
+`tsc --noEmit`이 타입을 검사합니다.
 
-## Deploy on Vercel
+```bash
+pnpm typecheck
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+배포용 빌드가 되는지는 아래 명령으로 확인합니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm build
+```
