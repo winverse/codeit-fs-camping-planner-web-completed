@@ -1,32 +1,43 @@
 import { style } from "@vanilla-extract/css";
+import { vars } from "@/styles/theme.css";
 
 export const form = style({
   display: "flex",
   flexDirection: "column",
-  gap: "12px",
-  padding: "16px",
-  border: "1px solid #d4d4d4",
-  borderRadius: "8px",
+  gap: vars.space.md,
+  padding: vars.space.lg,
+  backgroundColor: vars.color.surface,
+  border: `1px solid ${vars.color.border}`,
+  borderRadius: vars.radius.md,
 });
 
 export const title = style({
-  margin: 0,
-  fontSize: "18px",
+  fontSize: vars.fontSize.lg,
 });
 
 export const field = style({
   display: "flex",
   flexDirection: "column",
-  gap: "4px",
+  gap: vars.space.xs,
+  fontSize: vars.fontSize.sm,
+  fontWeight: 600,
+});
+
+export const textarea = style({
+  padding: `${vars.space.sm} ${vars.space.md}`,
+  border: `1px solid ${vars.color.borderStrong}`,
+  borderRadius: vars.radius.sm,
+  fontSize: vars.fontSize.md,
+  fontWeight: 400,
+  resize: "vertical",
 });
 
 export const preview = style({
-  margin: 0,
-  color: "#525252",
+  color: vars.color.textMuted,
+  fontSize: vars.fontSize.sm,
 });
 
 export const error = style({
-  margin: 0,
-  color: "#b91c1c",
-  fontSize: "14px",
+  color: vars.color.danger,
+  fontSize: vars.fontSize.sm,
 });

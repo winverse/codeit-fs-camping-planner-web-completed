@@ -10,21 +10,27 @@ interface CampsiteCardProps {
 function CampsiteCard({ campsite }: CampsiteCardProps) {
   return (
     <article className={styles.card}>
-      {campsite.imageUrl && (
+      {campsite.imageUrl ? (
         <img
           className={styles.image}
           src={campsite.imageUrl}
           alt={campsite.name}
         />
+      ) : (
+        <div className={styles.noImage}>사진 없음</div>
       )}
-      <h2 className={styles.name}>
-        <Link href={`/campsites/${campsite.id}`}>{campsite.name}</Link>
-      </h2>
-      <p className={styles.region}>
-        {campsite.region} {campsite.city}
-      </p>
-      <p>{campsite.industries.join(", ")}</p>
-      <PetBadge petAllowed={campsite.petAllowed} />
+      <div className={styles.body}>
+        <h2 className={styles.name}>
+          <Link href={`/campsites/${campsite.id}`} className={styles.link}>
+            {campsite.name}
+          </Link>
+        </h2>
+        <p className={styles.region}>
+          {campsite.region} {campsite.city}
+        </p>
+        <p className={styles.industries}>{campsite.industries.join(", ")}</p>
+        <PetBadge petAllowed={campsite.petAllowed} />
+      </div>
     </article>
   );
 }

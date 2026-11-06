@@ -1,10 +1,11 @@
 import { style } from "@vanilla-extract/css";
+import { vars } from "@/styles/theme.css";
 
 export const panel = style({
-  padding: "24px",
-  backgroundColor: "#fafafa",
+  display: "grid",
+  gap: vars.space.md,
 });
 
 export const title = style({
-  fontSize: "20px",
+  fontSize: vars.fontSize.xl,
 });

@@ -1,29 +1,67 @@
 import { style } from "@vanilla-extract/css";
+import { vars } from "@/styles/theme.css";
 
 export const card = style({
-  padding: "16px",
-  border: "1px solid #d4d4d4",
+  display: "flex",
+  gap: vars.space.md,
+  padding: vars.space.md,
+  backgroundColor: vars.color.surface,
+  border: `1px solid ${vars.color.border}`,
+  borderRadius: vars.radius.md,
+});
+
+export const image = style({
+  flexShrink: 0,
+  width: vars.size.thumbnail,
+  height: vars.size.thumbnail,
+  objectFit: "cover",
+  borderRadius: vars.radius.sm,
+});
+
+export const noImage = style({
+  display: "grid",
+  placeItems: "center",
+  flexShrink: 0,
+  width: vars.size.thumbnail,
+  height: vars.size.thumbnail,
+  borderRadius: vars.radius.sm,
+  backgroundColor: vars.color.border,
+  color: vars.color.textMuted,
+  fontSize: vars.fontSize.sm,
+});
+
+export const body = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  gap: vars.space.sm,
+  minWidth: 0,
 });
 
 export const name = style({
-  fontSize: "18px",
+  fontSize: vars.fontSize.lg,
 });
 
-export const people = style({
-  margin: 0,
+export const status = style({
+  padding: `${vars.space.xs} ${vars.space.sm}`,
+  borderRadius: vars.radius.full,
+  backgroundColor: vars.color.background,
+  color: vars.color.textMuted,
+  fontSize: vars.fontSize.sm,
+  fontWeight: 600,
 });
 
 export const memo = style({
-  color: "#525252",
+  color: vars.color.textMuted,
 });
 
 export const actions = style({
   display: "flex",
-  gap: "8px",
+  flexWrap: "wrap",
+  gap: vars.space.sm,
 });
 
 export const error = style({
-  margin: 0,
-  color: "#b91c1c",
-  fontSize: "14px",
+  color: vars.color.danger,
+  fontSize: vars.fontSize.sm,
 });

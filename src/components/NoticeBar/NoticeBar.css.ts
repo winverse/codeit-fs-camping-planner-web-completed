@@ -1,9 +1,11 @@
 import { style } from "@vanilla-extract/css";
+import { vars } from "@/styles/theme.css";
 
 export const notice = style({
-  margin: 0,
-  padding: "8px 24px",
-  backgroundColor: "#dcfce7",
-  color: "#166534",
-  fontSize: "14px",
+  padding: `${vars.space.sm} ${vars.space.md}`,
+  backgroundColor: vars.color.primarySoft,
+  color: vars.color.primaryStrong,
+  fontSize: vars.fontSize.sm,
+  fontWeight: 600,
+  textAlign: "center",
 });

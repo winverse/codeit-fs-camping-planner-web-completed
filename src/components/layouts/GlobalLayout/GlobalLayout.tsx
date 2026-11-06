@@ -12,14 +12,16 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
   return (
     <AppProviders>
       <header className={styles.header}>
-        <Link href="/" className={styles.logo}>
-          캠핑 플래너
-        </Link>
-        <nav>
-          <Link href="/trips" className={styles.navLink}>
-            내 캠핑 계획
+        <div className={styles.headerInner}>
+          <Link href="/" className={styles.logo}>
+            캠핑 플래너
           </Link>
-        </nav>
+          <nav>
+            <Link href="/trips" className={styles.navLink}>
+              내 캠핑 계획
+            </Link>
+          </nav>
+        </div>
       </header>
       <NoticeBar />
       <main className={styles.main}>{children}</main>

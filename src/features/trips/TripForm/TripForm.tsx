@@ -59,7 +59,12 @@ function TripForm({ campsiteId }: TripFormProps) {
       />
       <label className={styles.field}>
         메모
-        <textarea name="memo" value={memo} onChange={handleMemoChange} />
+        <textarea
+          className={styles.textarea}
+          name="memo"
+          value={memo}
+          onChange={handleMemoChange}
+        />
       </label>
       <p className={styles.preview}>
         캠핑장 {campsiteId}번 · {people}명 · {memo || "메모 없음"}
