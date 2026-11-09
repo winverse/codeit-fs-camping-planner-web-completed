@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { TripCard } from "@/features/trips/TripCard";
 import useTripsQuery from "@/features/trips/hooks/useTripsQuery";
+import { TripCard } from "@/features/trips/TripCard";
 import * as styles from "./TripList.css";
 
 function TripList() {

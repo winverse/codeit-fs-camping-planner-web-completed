@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react";
-import { useRouter } from "next/navigation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
+import type { ChangeEvent, SubmitEvent } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/Button";
 import { TextField } from "@/components/TextField";
 import {
@@ -11,7 +12,7 @@ import {
   MAX_PEOPLE,
   MIN_PEOPLE,
 } from "@/constants/trip";
-import { useNotice } from "@/contexts/NoticeContext";
+import { useNoticeContext } from "@/contexts/NoticeContext";
 import { createTrip } from "@/lib/api";
 import { queryKeys } from "@/lib/queryKeys";
 import * as styles from "./TripForm.css";
@@ -23,7 +24,7 @@ interface TripFormProps {
 function TripForm({ campsiteId }: TripFormProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { showNotice } = useNotice();
+  const { showNotice } = useNoticeContext();
   const [people, setPeople] = useState(DEFAULT_PEOPLE);
   const [memo, setMemo] = useState("");
   const peopleInputRef = useRef<HTMLInputElement>(null);

@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { NoticeBar } from "@/components/NoticeBar";
 import { AppProviders } from "@/providers";
 import * as styles from "./GlobalLayout.css";

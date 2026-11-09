@@ -1,10 +1,10 @@
 "use client";
 
-import { useNotice } from "@/contexts/NoticeContext";
+import { useNoticeContext } from "@/contexts/NoticeContext";
 import * as styles from "./NoticeBar.css";
 
 function NoticeBar() {
-  const { notice } = useNotice();
+  const { notice } = useNoticeContext();
 
   return (
     <div className={styles.region} role="status">

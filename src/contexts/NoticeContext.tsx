@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { createContext, useContext, useState } from "react";
 
 interface NoticeContextValue {
   notice: string | null;
@@ -9,11 +10,13 @@ interface NoticeContextValue {
 
 const NoticeContext = createContext<NoticeContextValue | null>(null);
 
-export function useNotice() {
+export function useNoticeContext() {
   const context = useContext(NoticeContext);
 
-  if (!context) {
-    throw new Error("useNotice는 NoticeProvider 안에서만 쓸 수 있습니다.");
+  if (context === null) {
+    throw new Error(
+      "useNoticeContext는 NoticeProvider 안에서만 쓸 수 있습니다.",
+    );
   }
 
   return context;

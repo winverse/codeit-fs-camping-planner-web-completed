@@ -7,7 +7,6 @@ const withVanillaExtract = createVanillaExtractPlugin({
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  typedRoutes: true,
 };
 
 export default withVanillaExtract(nextConfig);

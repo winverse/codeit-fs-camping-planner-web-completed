@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { CampsiteResponse } from "@/types/campsite";
 import { PetBadge } from "@/features/campsites/PetBadge";
+import type { CampsiteResponse } from "@/types/campsite";
 import * as styles from "./CampsiteCard.css";
 
 interface CampsiteCardProps {

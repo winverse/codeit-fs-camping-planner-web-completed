@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "next typegen && tsc --noEmit"
+    "lint": "biome check",
+    "format": "biome format --write"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.106.0",
@@ -18,12 +19,11 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@biomejs/biome": "2.6.6",
+    "@types/react": "19.3.0",
     "@vanilla-extract/next-plugin": "^2.5.2",
     "babel-plugin-react-compiler": "1.0.0",
-    "typescript": "^7.0.2"
+    "typescript": "7.0.2"
   },
   "packageManager": "pnpm@11.3.0"
 }

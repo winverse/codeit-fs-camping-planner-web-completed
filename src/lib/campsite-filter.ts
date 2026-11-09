@@ -1,6 +1,4 @@
-export function toPetFilter(
-  value: string | string[] | undefined,
-): boolean | undefined {
+export function toPetFilter(value: string | string[] | undefined) {
   if (typeof value !== "string") {
     return undefined;
   }

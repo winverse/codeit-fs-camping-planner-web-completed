@@ -1,6 +1,6 @@
 export type TripStatus = "wish" | "booked" | "done" | "canceled";
 
-export type TripResponse = {
+export interface TripResponse {
   id: number;
   campsite: {
     id: number;
@@ -12,12 +12,15 @@ export type TripResponse = {
   rating: number | null;
   memo: string;
   allowedNextStatuses: TripStatus[];
-};
+}
 
-export type UpdateTripInput = Partial<Pick<TripResponse, "status" | "rating">>;
+export interface UpdateTripInput {
+  status?: TripStatus;
+  rating?: number;
+}
 
-export type CreateTripInput = {
+export interface CreateTripInput {
   campsiteId: number;
   people: number;
   memo: string;
-};
+}

@@ -7,7 +7,7 @@ import type {
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
 
-function getErrorMessage(body: unknown): string {
+function getErrorMessage(body: unknown) {
   if (
     typeof body === "object" &&
     body !== null &&
@@ -19,7 +19,9 @@ function getErrorMessage(body: unknown): string {
   return "요청을 처리하지 못했습니다.";
 }
 
-export async function getCampsites(pet?: boolean): Promise<CampsiteResponse[]> {
+export async function getCampsites(
+  pet: boolean | undefined,
+): Promise<CampsiteResponse[]> {
   const query = pet === undefined ? "" : `?pet=${pet}`;
   const response = await fetch(`${API_URL}/api/campsites${query}`);
 
@@ -68,7 +70,7 @@ export async function updateTrip(
   });
 
   if (!response.ok) {
-    const body: unknown = await response.json();
+    const body = await response.json();
     throw new Error(getErrorMessage(body));
   }
 
@@ -87,7 +89,7 @@ export async function createTrip(
   });
 
   if (!response.ok) {
-    const body: unknown = await response.json();
+    const body = await response.json();
     throw new Error(getErrorMessage(body));
   }
 

@@ -3,7 +3,7 @@ import * as styles from "./TextField.css";
 
 interface TextFieldProps extends ComponentProps<"input"> {
   label: string;
-  error?: string;
+  error?: string | undefined;
 }
 
 function TextField({ label, error, ...restProps }: TextFieldProps) {

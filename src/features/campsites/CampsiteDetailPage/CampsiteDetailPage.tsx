@@ -42,9 +42,7 @@ function CampsiteDetailPage({ id }: CampsiteDetailPageProps) {
           <dt>시설</dt>
           <dd>{campsite.facilities.join(", ") || "정보 없음"}</dd>
           <dt>반려동물</dt>
-          <dd>
-            {campsite.petAllowed ? "함께 갈 수 있음" : "함께 갈 수 없음"}
-          </dd>
+          <dd>{campsite.petAllowed ? "함께 갈 수 있음" : "함께 갈 수 없음"}</dd>
         </dl>
       </section>
       <TripForm campsiteId={campsite.id} />
