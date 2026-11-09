@@ -48,7 +48,7 @@ function TripForm({ campsiteId }: TripFormProps) {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h3 className={styles.title}>캠핑 계획 추가</h3>
+      <h2 className={styles.title}>캠핑 계획 추가</h2>
       <TextField
         ref={peopleInputRef}
         label="인원"
@@ -56,12 +56,14 @@ function TripForm({ campsiteId }: TripFormProps) {
         name="people"
         value={people}
         onChange={handlePeopleChange}
+        error={error?.message}
       />
       <label className={styles.field}>
         메모
         <textarea
           className={styles.textarea}
           name="memo"
+          maxLength={200}
           value={memo}
           onChange={handleMemoChange}
         />
@@ -69,7 +71,6 @@ function TripForm({ campsiteId }: TripFormProps) {
       <p className={styles.preview}>
         캠핑장 {campsiteId}번 · {people}명 · {memo || "메모 없음"}
       </p>
-      {error && <p className={styles.error}>{error.message}</p>}
       <Button type="submit" disabled={isPending}>
         계획 추가
       </Button>

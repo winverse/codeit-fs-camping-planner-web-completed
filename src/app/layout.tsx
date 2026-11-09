@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import { GlobalLayout } from "@/components/layouts/GlobalLayout";
 import "@/styles/global.css";
-
-const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "캠핑 플래너",
@@ -15,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko">
-      <body className={notoSansKr.className}>
+      <body>
         <GlobalLayout>{children}</GlobalLayout>
       </body>
     </html>

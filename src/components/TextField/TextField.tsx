@@ -3,13 +3,18 @@ import * as styles from "./TextField.css";
 
 interface TextFieldProps extends ComponentProps<"input"> {
   label: string;
+  error?: string;
 }
 
-function TextField({ label, ...restProps }: TextFieldProps) {
+function TextField({ label, error, ...restProps }: TextFieldProps) {
   return (
     <label className={styles.field}>
       {label}
-      <input className={styles.input} {...restProps} />
+      <input
+        className={error ? styles.inputError : styles.input}
+        {...restProps}
+      />
+      {error && <span className={styles.error}>{error}</span>}
     </label>
   );
 }

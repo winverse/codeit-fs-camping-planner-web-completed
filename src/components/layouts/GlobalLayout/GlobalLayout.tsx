@@ -23,8 +23,10 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
           </nav>
         </div>
       </header>
-      <NoticeBar />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <NoticeBar />
+        {children}
+      </main>
       <footer className={styles.footer}>자료 출처: 한국관광공사 고캠핑</footer>
     </AppProviders>
   );

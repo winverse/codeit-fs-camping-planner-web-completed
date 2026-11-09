@@ -3,29 +3,38 @@ import { vars } from "@/styles/theme.css";
 
 export const button = recipe({
   base: {
-    minHeight: vars.size.control,
-    padding: `${vars.space.sm} ${vars.space.md}`,
-    borderRadius: vars.radius.sm,
-    border: `1px solid ${vars.color.primary}`,
-    fontWeight: 600,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    border: "none",
+    borderRadius: vars.radius.m,
+    fontWeight: vars.fontWeight.semibold,
     cursor: "pointer",
-    transition: "background-color 0.2s",
     ":disabled": {
-      opacity: 0.5,
+      backgroundColor: vars.color.disabledBg,
+      color: vars.color.textDisabled,
       cursor: "not-allowed",
     },
   },
   variants: {
     variant: {
+      // 흰 글자와 브랜드 색의 대비가 3:1이라 큰 굵은 글자(19px·700)로 씁니다.
       primary: {
-        backgroundColor: vars.color.primary,
-        color: vars.color.onPrimary,
-        ":hover": { backgroundColor: vars.color.primaryStrong },
+        height: vars.size.button,
+        padding: `0 ${vars.space.blockPad}`,
+        backgroundColor: vars.color.brand,
+        color: vars.color.onBrand,
+        fontSize: vars.fontSize.primaryButton,
+        fontWeight: vars.fontWeight.bold,
+        ":hover": { backgroundColor: vars.color.brandPressed },
       },
       secondary: {
-        backgroundColor: vars.color.surface,
-        color: vars.color.primaryStrong,
-        ":hover": { backgroundColor: vars.color.primarySoft },
+        height: vars.size.buttonSmall,
+        padding: `0 ${vars.space.stackM}`,
+        backgroundColor: vars.color.bg,
+        color: vars.color.text1,
+        fontSize: vars.fontSize.sub,
+        ":hover": { backgroundColor: vars.color.line },
       },
     },
   },

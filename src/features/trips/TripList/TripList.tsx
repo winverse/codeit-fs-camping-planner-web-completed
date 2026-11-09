@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { TripCard } from "@/features/trips/TripCard";
 import useTripsQuery from "@/features/trips/hooks/useTripsQuery";
 import * as styles from "./TripList.css";
@@ -12,6 +13,16 @@ function TripList() {
   }
   if (isError) {
     return <p>캠핑 계획을 불러오지 못했습니다.</p>;
+  }
+  if (data.length === 0) {
+    return (
+      <div className={styles.empty}>
+        <p>아직 세운 캠핑 계획이 없습니다.</p>
+        <Link href="/" className={styles.link}>
+          캠핑장 목록 보기
+        </Link>
+      </div>
+    );
   }
 
   return (

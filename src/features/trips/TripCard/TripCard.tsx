@@ -14,19 +14,17 @@ function TripCard({ trip }: TripCardProps) {
 
   return (
     <article className={styles.card}>
-      {trip.campsite.imageUrl ? (
-        <img
-          className={styles.image}
-          src={trip.campsite.imageUrl}
-          alt={trip.campsite.name}
-        />
-      ) : (
-        <div className={styles.noImage}>사진 없음</div>
-      )}
+      <img
+        className={trip.campsite.imageUrl ? styles.image : styles.noImage}
+        src={trip.campsite.imageUrl ?? "/tent.svg"}
+        alt={trip.campsite.imageUrl ? trip.campsite.name : ""}
+      />
       <div className={styles.body}>
         <h2 className={styles.name}>{trip.campsite.name}</h2>
-        <p className={styles.status}>{TRIP_STATUS_LABEL[trip.status]}</p>
-        <p>{trip.people}명</p>
+        <p className={styles.status({ status: trip.status })}>
+          {TRIP_STATUS_LABEL[trip.status]}
+        </p>
+        <p className={styles.people}>{trip.people}명</p>
         {trip.memo && <p className={styles.memo}>{trip.memo}</p>}
         {trip.status === "done" && (
           <StarRating

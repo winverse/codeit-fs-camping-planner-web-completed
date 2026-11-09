@@ -4,40 +4,44 @@ import { vars } from "@/styles/theme.css";
 export const form = style({
   display: "flex",
   flexDirection: "column",
-  gap: vars.space.md,
-  padding: vars.space.lg,
+  gap: vars.space.stackM,
+  padding: vars.space.blockPad,
   backgroundColor: vars.color.surface,
-  border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.md,
+  borderRadius: vars.radius.l,
 });
 
 export const title = style({
-  fontSize: vars.fontSize.lg,
+  fontSize: vars.fontSize.h2,
+  fontWeight: vars.fontWeight.bold,
+  lineHeight: vars.lineHeight.h2,
 });
 
 export const field = style({
   display: "flex",
   flexDirection: "column",
-  gap: vars.space.xs,
-  fontSize: vars.fontSize.sm,
-  fontWeight: 600,
+  gap: vars.space.stackS,
+  color: vars.color.text2,
+  fontSize: vars.fontSize.sub,
+  fontWeight: vars.fontWeight.semibold,
 });
 
 export const textarea = style({
-  padding: `${vars.space.sm} ${vars.space.md}`,
-  border: `1px solid ${vars.color.borderStrong}`,
-  borderRadius: vars.radius.sm,
-  fontSize: vars.fontSize.md,
-  fontWeight: 400,
+  padding: vars.space.stackM,
+  border: "1px solid transparent",
+  borderRadius: vars.radius.m,
+  backgroundColor: vars.color.bg,
+  color: vars.color.text1,
+  fontSize: vars.fontSize.body,
+  fontWeight: vars.fontWeight.regular,
   resize: "vertical",
+  ":focus": {
+    outline: "none",
+    borderColor: vars.color.focus,
+    backgroundColor: vars.color.surface,
+  },
 });
 
 export const preview = style({
-  color: vars.color.textMuted,
-  fontSize: vars.fontSize.sm,
-});
-
-export const error = style({
-  color: vars.color.danger,
-  fontSize: vars.fontSize.sm,
+  color: vars.color.text2,
+  fontSize: vars.fontSize.sub,
 });

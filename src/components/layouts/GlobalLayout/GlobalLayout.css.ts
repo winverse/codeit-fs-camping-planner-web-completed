@@ -1,9 +1,11 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "@/styles/theme.css";
 
 export const header = style({
-  backgroundColor: vars.color.surface,
-  borderBottom: `1px solid ${vars.color.border}`,
+  position: "sticky",
+  top: 0,
+  zIndex: 5,
+  backgroundColor: vars.color.bg,
 });
 
 export const headerInner = style({
@@ -11,38 +13,44 @@ export const headerInner = style({
   justifyContent: "space-between",
   alignItems: "center",
   maxWidth: vars.size.content,
+  height: vars.size.appbar,
   margin: "0 auto",
-  padding: vars.space.md,
+  padding: `0 ${vars.space.pageX}`,
 });
 
 export const logo = style({
-  color: vars.color.primaryStrong,
-  fontSize: vars.fontSize.lg,
-  fontWeight: 700,
-  textDecoration: "none",
+  display: "inline-flex",
+  alignItems: "center",
+  minHeight: vars.size.buttonSmall,
+  fontWeight: vars.fontWeight.bold,
 });
 
 export const navLink = style({
-  padding: `${vars.space.sm} ${vars.space.md}`,
-  borderRadius: vars.radius.full,
-  color: vars.color.primaryStrong,
-  fontWeight: 600,
-  textDecoration: "none",
-  ":hover": {
-    backgroundColor: vars.color.primarySoft,
-  },
+  display: "inline-flex",
+  alignItems: "center",
+  minHeight: vars.size.buttonSmall,
+  color: vars.color.brandText,
+  fontSize: vars.fontSize.sub,
+  fontWeight: vars.fontWeight.semibold,
 });
 
 export const main = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: vars.space.blockGap,
   maxWidth: vars.size.content,
   margin: "0 auto",
-  padding: `${vars.space.lg} ${vars.space.md} ${vars.space.xl}`,
+  padding: `${vars.space.stackS} 0 ${vars.space.stackL}`,
+});
+
+// 불러오는 중·오류 문구처럼 클래스 없이 main에 바로 놓인 문단에 페이지 여백을 줍니다.
+globalStyle(`${main} > p:not([class])`, {
+  padding: `0 ${vars.space.pageX}`,
 });
 
 export const footer = style({
-  padding: vars.space.lg,
-  borderTop: `1px solid ${vars.color.border}`,
-  color: vars.color.textMuted,
-  fontSize: vars.fontSize.sm,
+  padding: `${vars.space.stackL} ${vars.space.pageX}`,
+  color: vars.color.text2,
+  fontSize: vars.fontSize.caption,
   textAlign: "center",
 });

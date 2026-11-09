@@ -2,6 +2,8 @@
 
 이 프로젝트는 캠핑 플래너 API를 호출하는 Next.js 화면을 TypeScript로 만든 최종 상태입니다. 첫 화면(`/`)에서 캠핑장 목록을 반려동물 동반 여부로 걸러 보고, 상세 화면(`/campsites/[id]`)에서 캠핑장 정보를 확인한 뒤 캠핑 계획을 추가하며, 내 캠핑 계획 화면(`/trips`)에서 계획의 상태와 평점을 바꿉니다. 서버 데이터 요청은 `src/lib/api.ts`의 함수와 TanStack Query 훅이 맡고, 스타일은 vanilla-extract(`*.css.ts`)로 작성했습니다.
 
+사진이 없는 캠핑장 자리에 쓰는 `public/tent.svg`는 Microsoft Fluent UI Emoji(https://github.com/microsoft/fluentui-emoji)의 Tent 그림이며 MIT License를 따릅니다.
+
 ## 최종 구조
 
 - `src/app/`: App Router의 경로 파일(`page.tsx`)과 공통 레이아웃(`layout.tsx`)

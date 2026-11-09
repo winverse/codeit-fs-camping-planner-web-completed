@@ -2,28 +2,35 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "@/styles/theme.css";
 
 export const title = style({
-  margin: `0 0 ${vars.space.lg}`,
-  color: vars.color.primaryStrong,
-  fontSize: vars.fontSize.xxl,
+  padding: `${vars.space.stackL} ${vars.space.pageX} ${vars.space.stackM}`,
+  fontSize: vars.fontSize.title,
+  fontWeight: vars.fontWeight.bold,
+  lineHeight: vars.lineHeight.title,
+  letterSpacing: vars.font.titleTracking,
 });
 
 export const filter = style({
   display: "flex",
   flexWrap: "wrap",
-  gap: vars.space.sm,
+  gap: vars.space.stackS,
 });
 
 export const filterLink = style({
-  padding: `${vars.space.sm} ${vars.space.md}`,
-  border: `1px solid ${vars.color.primary}`,
-  borderRadius: vars.radius.full,
-  color: vars.color.primaryStrong,
-  fontSize: vars.fontSize.sm,
-  fontWeight: 600,
-  textDecoration: "none",
+  display: "inline-flex",
+  alignItems: "center",
+  minHeight: vars.size.buttonSmall,
+  padding: `0 ${vars.space.stackM}`,
+  borderRadius: vars.radius.pill,
+  backgroundColor: vars.color.surface,
+  boxShadow: `inset 0 0 0 1px ${vars.color.lineStrong}`,
+  color: vars.color.text2,
+  fontSize: vars.fontSize.sub,
+  fontWeight: vars.fontWeight.semibold,
 });
 
+// 걸러 보기 칩의 선택 상태는 브랜드 색이 아니라 먹색 채움으로 보입니다.
 export const active = style({
-  backgroundColor: vars.color.primary,
-  color: vars.color.onPrimary,
+  backgroundColor: vars.color.text1,
+  boxShadow: "none",
+  color: vars.color.surface,
 });

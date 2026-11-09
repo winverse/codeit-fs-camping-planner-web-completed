@@ -3,18 +3,21 @@ import { vars } from "@/styles/theme.css";
 
 export const rating = style({
   display: "flex",
-  gap: vars.space.xs,
 });
 
+// 별점 입력은 값을 고르는 조작이라 브랜드 색으로 보입니다.
 export const star = style({
-  padding: vars.space.xs,
+  display: "grid",
+  placeItems: "center",
+  width: vars.size.buttonSmall,
+  height: vars.size.buttonSmall,
   border: "none",
-  borderRadius: vars.radius.sm,
+  borderRadius: vars.radius.s,
   background: "none",
-  color: vars.color.accent,
-  fontSize: vars.fontSize.xl,
+  color: vars.color.brand,
+  fontSize: vars.size.icon,
   cursor: "pointer",
   ":hover": {
-    backgroundColor: vars.color.background,
+    backgroundColor: vars.color.bg,
   },
 });

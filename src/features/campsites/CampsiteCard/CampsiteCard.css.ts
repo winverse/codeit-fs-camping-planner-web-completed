@@ -4,51 +4,44 @@ import { vars } from "@/styles/theme.css";
 export const card = style({
   display: "flex",
   flexDirection: "column",
-  overflow: "hidden",
-  backgroundColor: vars.color.surface,
-  border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.md,
+  alignItems: "flex-start",
+  gap: vars.space.xs,
+  minWidth: 0,
 });
 
 export const image = style({
+  display: "block",
   width: "100%",
   aspectRatio: "4 / 3",
+  marginBottom: vars.space.xs,
+  borderRadius: vars.radius.m,
+  backgroundColor: vars.color.bg,
   objectFit: "cover",
 });
 
-export const noImage = style({
-  display: "grid",
-  placeItems: "center",
-  aspectRatio: "4 / 3",
-  backgroundColor: vars.color.border,
-  color: vars.color.textMuted,
-  fontSize: vars.fontSize.sm,
-});
-
-export const body = style({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  gap: vars.space.xs,
-  padding: vars.space.md,
-});
+// 텐트 그림은 사진과 같은 칸의 가운데에 잘리지 않게 둡니다.
+export const noImage = style([
+  image,
+  { padding: vars.space.stackL, objectFit: "contain" },
+]);
 
 export const name = style({
-  fontSize: vars.fontSize.lg,
-});
-
-export const link = style({
-  textDecoration: "none",
-  ":hover": {
-    textDecoration: "underline",
+  fontSize: vars.fontSize.body,
+  fontWeight: vars.fontWeight.semibold,
+  lineHeight: vars.lineHeight.strong,
+  selectors: {
+    [`${card}:hover &`]: {
+      textDecoration: "underline",
+    },
   },
 });
 
 export const region = style({
-  color: vars.color.textMuted,
-  fontSize: vars.fontSize.sm,
+  color: vars.color.text2,
+  fontSize: vars.fontSize.sub,
 });
 
 export const industries = style({
-  fontSize: vars.fontSize.sm,
+  color: vars.color.text3,
+  fontSize: vars.fontSize.caption,
 });
