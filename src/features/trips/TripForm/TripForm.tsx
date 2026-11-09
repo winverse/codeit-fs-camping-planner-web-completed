@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/Button";
 import { TextField } from "@/components/TextField";
+import { DEFAULT_PEOPLE } from "@/constants/trip";
 import { useNotice } from "@/contexts/NoticeContext";
 import { createTrip } from "@/lib/api";
 import { queryKeys } from "@/lib/queryKeys";
@@ -18,7 +19,7 @@ function TripForm({ campsiteId }: TripFormProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
   const { showNotice } = useNotice();
-  const [people, setPeople] = useState(2);
+  const [people, setPeople] = useState(DEFAULT_PEOPLE);
   const [memo, setMemo] = useState("");
   const peopleInputRef = useRef<HTMLInputElement>(null);
   const { mutate, isPending, error } = useMutation({
