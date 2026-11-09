@@ -40,7 +40,7 @@ function CampsiteDetailPage({ id }: CampsiteDetailPageProps) {
           <dt>업종</dt>
           <dd>{campsite.industries.join(", ")}</dd>
           <dt>시설</dt>
-          <dd>{campsite.facilities.join(", ")}</dd>
+          <dd>{campsite.facilities.join(", ") || "정보 없음"}</dd>
           <dt>반려동물</dt>
           <dd>
             {campsite.petAllowed ? "함께 갈 수 있음" : "함께 갈 수 없음"}

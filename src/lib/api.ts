@@ -35,7 +35,7 @@ export async function getCampsite(
 ): Promise<CampsiteResponse | null> {
   const response = await fetch(`${API_URL}/api/campsites/${id}`);
 
-  if (response.status === 404) {
+  if (response.status === 404 || response.status === 400) {
     return null;
   }
   if (!response.ok) {

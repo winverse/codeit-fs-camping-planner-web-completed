@@ -56,7 +56,7 @@ export const vars = createGlobalTheme(":root", {
     stackS: "8px",
     stackM: "16px",
     stackL: "32px",
-    pageX: "24px",
+    pageX: "40px",
     blockPad: "24px",
     blockGap: "12px",
     rowPy: "16px",

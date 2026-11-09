@@ -36,6 +36,14 @@ export const button = recipe({
         fontSize: vars.fontSize.sub,
         ":hover": { backgroundColor: vars.color.line },
       },
+      danger: {
+        height: vars.size.buttonSmall,
+        padding: `0 ${vars.space.stackM}`,
+        backgroundColor: vars.color.bg,
+        color: vars.color.danger,
+        fontSize: vars.fontSize.sub,
+        ":hover": { backgroundColor: vars.color.line },
+      },
     },
   },
   defaultVariants: {

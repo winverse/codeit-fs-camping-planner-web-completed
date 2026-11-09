@@ -17,7 +17,7 @@ function TripCard({ trip }: TripCardProps) {
       <img
         className={trip.campsite.imageUrl ? styles.image : styles.noImage}
         src={trip.campsite.imageUrl ?? "/tent.svg"}
-        alt={trip.campsite.imageUrl ? trip.campsite.name : ""}
+        alt=""
       />
       <div className={styles.body}>
         <h2 className={styles.name}>{trip.campsite.name}</h2>
@@ -38,7 +38,7 @@ function TripCard({ trip }: TripCardProps) {
             <Button
               key={status}
               type="button"
-              variant="secondary"
+              variant={status === "canceled" ? "danger" : "secondary"}
               disabled={isPending}
               onClick={() => mutate({ status })}
             >

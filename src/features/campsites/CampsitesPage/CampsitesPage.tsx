@@ -10,7 +10,6 @@ interface CampsitesPageProps {
 function CampsitesPage({ pet }: CampsitesPageProps) {
   return (
     <>
-      <h1 className={styles.title}>캠핑 플래너</h1>
       <Panel title="캠핑장 목록">
         <nav className={styles.filter}>
           <Link

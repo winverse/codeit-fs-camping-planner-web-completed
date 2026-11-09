@@ -13,7 +13,7 @@ function CampsiteCard({ campsite }: CampsiteCardProps) {
       <img
         className={campsite.imageUrl ? styles.image : styles.noImage}
         src={campsite.imageUrl ?? "/tent.svg"}
-        alt={campsite.imageUrl ? campsite.name : ""}
+        alt=""
       />
       <h3 className={styles.name}>{campsite.name}</h3>
       <p className={styles.region}>

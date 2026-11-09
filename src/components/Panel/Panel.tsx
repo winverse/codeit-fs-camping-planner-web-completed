@@ -9,7 +9,7 @@ interface PanelProps {
 function Panel({ title, children }: PanelProps) {
   return (
     <section className={styles.panel}>
-      <h2 className={styles.title}>{title}</h2>
+      <h1 className={styles.title}>{title}</h1>
       {children}
     </section>
   );

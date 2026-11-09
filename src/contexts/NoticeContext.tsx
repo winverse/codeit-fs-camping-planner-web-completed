@@ -26,7 +26,12 @@ interface NoticeProviderProps {
 export function NoticeProvider({ children }: NoticeProviderProps) {
   const [notice, setNotice] = useState<string | null>(null);
 
-  const value = { notice, showNotice: setNotice };
+  function showNotice(message: string) {
+    setNotice(message);
+    setTimeout(() => setNotice(null), 3000);
+  }
+
+  const value = { notice, showNotice };
 
   return (
     <NoticeContext.Provider value={value}>{children}</NoticeContext.Provider>

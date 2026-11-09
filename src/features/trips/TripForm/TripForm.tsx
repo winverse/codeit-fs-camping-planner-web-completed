@@ -51,7 +51,7 @@ function TripForm({ campsiteId }: TripFormProps) {
       <h2 className={styles.title}>캠핑 계획 추가</h2>
       <TextField
         ref={peopleInputRef}
-        label="인원"
+        label="인원(1~8명)"
         type="number"
         name="people"
         value={people}
