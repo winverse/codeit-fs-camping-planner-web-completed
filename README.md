@@ -4,6 +4,8 @@
 
 사진이 없는 캠핑장 자리에 쓰는 `public/tent.svg`는 Microsoft Fluent UI Emoji(https://github.com/microsoft/fluentui-emoji)의 Tent 그림이며 MIT License를 따릅니다.
 
+머리글 로고(`public/logo.svg`)와 파비콘(`src/app/icon.svg`)은 Tabler Icons(https://github.com/tabler/tabler-icons, v3.30.0)의 `tent` 아이콘에 선 색만 바꾼 것이며 MIT License(Copyright (c) 2020-2024 Paweł Kuna)를 따릅니다.
+
 ## 최종 구조
 
 - `src/app/`: App Router의 경로 파일(`page.tsx`)과 공통 레이아웃(`layout.tsx`)

@@ -14,6 +14,7 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <Link href="/" className={styles.logo}>
+            <img src="/logo.svg" alt="" width={24} height={24} />
             캠핑 플래너
           </Link>
           <nav>

@@ -21,6 +21,7 @@ export const headerInner = style({
 export const logo = style({
   display: "inline-flex",
   alignItems: "center",
+  gap: vars.space.stackS,
   minHeight: vars.size.buttonSmall,
   fontWeight: vars.fontWeight.bold,
 });
