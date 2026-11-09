@@ -42,7 +42,7 @@ export const button = recipe({
         backgroundColor: vars.color.bg,
         color: vars.color.danger,
         fontSize: vars.fontSize.sub,
-        ":hover": { backgroundColor: vars.color.line },
+        ":hover": { backgroundColor: vars.color.dangerTint },
       },
     },
   },

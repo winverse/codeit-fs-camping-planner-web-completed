@@ -15,7 +15,7 @@ function CampsiteCard({ campsite }: CampsiteCardProps) {
         src={campsite.imageUrl ?? "/tent.svg"}
         alt=""
       />
-      <h3 className={styles.name}>{campsite.name}</h3>
+      <h2 className={styles.name}>{campsite.name}</h2>
       <p className={styles.region}>
         {campsite.region} {campsite.city}
       </p>
