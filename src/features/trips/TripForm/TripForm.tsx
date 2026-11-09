@@ -5,7 +5,12 @@ import { useRouter } from "next/navigation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/Button";
 import { TextField } from "@/components/TextField";
-import { DEFAULT_PEOPLE } from "@/constants/trip";
+import {
+  DEFAULT_PEOPLE,
+  MAX_MEMO_LENGTH,
+  MAX_PEOPLE,
+  MIN_PEOPLE,
+} from "@/constants/trip";
 import { useNotice } from "@/contexts/NoticeContext";
 import { createTrip } from "@/lib/api";
 import { queryKeys } from "@/lib/queryKeys";
@@ -52,7 +57,7 @@ function TripForm({ campsiteId }: TripFormProps) {
       <h2 className={styles.title}>캠핑 계획 추가</h2>
       <TextField
         ref={peopleInputRef}
-        label="인원(1~8명)"
+        label={`인원(${MIN_PEOPLE}~${MAX_PEOPLE}명)`}
         type="number"
         name="people"
         value={people}
@@ -64,7 +69,7 @@ function TripForm({ campsiteId }: TripFormProps) {
         <textarea
           className={styles.textarea}
           name="memo"
-          maxLength={200}
+          maxLength={MAX_MEMO_LENGTH}
           value={memo}
           onChange={handleMemoChange}
         />
