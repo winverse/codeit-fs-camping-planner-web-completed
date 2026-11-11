@@ -8,9 +8,8 @@ function useUpdateTripMutation(id: number) {
 
   return useMutation({
     mutationFn: (input: UpdateTripInput) => updateTrip(id, input),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.trips.all() });
-    },
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: queryKeys.trips.all() }),
   });
 }
 
