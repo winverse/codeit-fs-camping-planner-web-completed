@@ -56,12 +56,12 @@ pnpm dev
 
 ## 확인하기
 
-타입 검사는 아래 명령으로 합니다. 문제가 없으면 아무것도 출력하지 않습니다.
+타입 검사는 아래 명령으로 합니다. 문제가 없으면 `$ tsc --noEmit`만 출력합니다.
 `LayoutProps`·`PageProps`는 `pnpm dev`나 `pnpm build`가 `.next/` 아래에 만드는
 타입이라, 저장소를 받은 직후에는 둘 중 하나를 한 번 실행한 뒤 검사합니다.
 
 ```bash
-pnpm exec tsc --noEmit
+pnpm typecheck
 ```
 
 코드 포맷은 Prettier로 검사합니다. 아래 명령은 파일을 고치지 않고 검사만 하며,
