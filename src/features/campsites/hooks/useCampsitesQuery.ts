@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getCampsites } from "@/lib/api";
 import { queryKeys } from "@/lib/queryKeys";
 
-function useCampsitesQuery(pet: boolean | undefined) {
+function useCampsitesQuery(pet?: boolean) {
   return useQuery({
     queryKey: queryKeys.campsites.list(pet),
     queryFn: () => getCampsites(pet),

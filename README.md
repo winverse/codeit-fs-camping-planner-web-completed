@@ -9,7 +9,7 @@
 ## 제공하는 것과 할 일
 
 - 제공: 캠핑장 목록(`/`, 반려동물 동반 가능 캠핑장만 보는 필터)·상세(`/campsites/[id]`)와 캠핑 계획 추가 폼, 내 캠핑 계획(`/trips`)의 상태 변경·평점, 계획을 추가한 뒤의 알림, 404 화면. 화면과 동작은 시작 코드와 같습니다.
-- 옮긴 것: `src/` 아래 JavaScript 파일은 모두 TypeScript(`.ts`·`.tsx`)이고, 서버가 보내는 응답의 모양은 `src/types/`에 타입으로 선언했습니다. TypeScript 설정은 `tsconfig.json`, Next.js 설정은 `next.config.ts`에 있습니다.
+- 옮긴 것: `src/` 아래 JavaScript 파일은 모두 TypeScript(`.ts`·`.tsx`)이고, 서버가 보내는 응답의 모양은 `src/interfaces/`에 타입으로 선언했습니다. TypeScript 설정은 `tsconfig.json`, Next.js 설정은 `next.config.ts`에 있습니다.
 - 할 일: 없습니다. 시작 코드에서 직접 옮긴 결과와 비교할 때 씁니다.
 - 옮기지 않은 파일: `public/`의 그림 파일과 `src/app/icon.svg`는 시작 코드 그대로입니다.
 
@@ -23,7 +23,7 @@
 - `src/providers/`, `src/contexts/`: TanStack Query의 `QueryClientProvider`와 알림 메시지 컨텍스트
 - `src/constants/`: 캠핑 계획 상태 이름과 인원·메모 범위 상수
 - `src/styles/`: 테마 변수와 전역 스타일
-- `src/types/`: API 서버가 보내는 캠핑장·캠핑 계획 응답의 타입
+- `src/interfaces/`: API 서버가 보내는 캠핑장·캠핑 계획 응답의 타입
 
 ## 시작하기
 

@@ -6,7 +6,7 @@ import { TripForm } from "@/features/trips/TripForm";
 import * as styles from "./CampsiteDetailPage.css";
 
 interface CampsiteDetailPageProps {
-  id: string;
+  id: number;
 }
 
 function CampsiteDetailPage({ id }: CampsiteDetailPageProps) {

@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import type { UpdateTripInput } from "@/interfaces/trip";
 import { updateTrip } from "@/lib/api";
 import { queryKeys } from "@/lib/queryKeys";
-import type { UpdateTripInput } from "@/types/trip";
 
 function useUpdateTripMutation(id: number) {
   const queryClient = useQueryClient();

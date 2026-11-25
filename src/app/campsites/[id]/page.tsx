@@ -5,5 +5,5 @@ export default async function CampsiteDetail({
 }: PageProps<"/campsites/[id]">) {
   const { id } = await params;
 
-  return <CampsiteDetailPage id={id} />;
+  return <CampsiteDetailPage id={Number(id)} />;
 }

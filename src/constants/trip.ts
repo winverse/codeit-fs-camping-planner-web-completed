@@ -1,4 +1,4 @@
-import type { TripStatus } from "@/types/trip";
+import type { TripStatus } from "@/interfaces/trip";
 
 export const DEFAULT_PEOPLE = 2;
 export const MIN_PEOPLE = 1;

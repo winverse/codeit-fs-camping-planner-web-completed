@@ -1,9 +1,9 @@
-import type { CampsiteResponse } from "@/types/campsite";
+import type { CampsiteResponse } from "@/interfaces/campsite";
 import type {
   CreateTripInput,
   TripResponse,
   UpdateTripInput,
-} from "@/types/trip";
+} from "@/interfaces/trip";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
 
@@ -19,9 +19,7 @@ function getErrorMessage(body: unknown) {
   return "요청을 처리하지 못했습니다.";
 }
 
-export async function getCampsites(
-  pet: boolean | undefined,
-): Promise<CampsiteResponse[]> {
+export async function getCampsites(pet?: boolean): Promise<CampsiteResponse[]> {
   const query = pet === undefined ? "" : `?pet=${pet}`;
   const response = await fetch(`${API_URL}/api/campsites${query}`);
 
@@ -33,7 +31,7 @@ export async function getCampsites(
 }
 
 export async function getCampsite(
-  id: string,
+  id: number,
 ): Promise<CampsiteResponse | null> {
   const response = await fetch(`${API_URL}/api/campsites/${id}`);
 

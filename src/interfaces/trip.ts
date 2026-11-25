@@ -22,5 +22,5 @@ export interface UpdateTripInput {
 export interface CreateTripInput {
   campsiteId: number;
   people: number;
-  memo: string;
+  memo?: string;
 }

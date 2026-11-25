@@ -1,8 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import type { ChangeEvent, SubmitEvent } from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react";
 import { Button } from "@/components/Button";
 import { TextField } from "@/components/TextField";
 import {

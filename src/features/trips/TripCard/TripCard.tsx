@@ -2,7 +2,7 @@ import { Button } from "@/components/Button";
 import { TRIP_STATUS_LABEL } from "@/constants/trip";
 import useUpdateTripMutation from "@/features/trips/hooks/useUpdateTripMutation";
 import { StarRating } from "@/features/trips/StarRating";
-import type { TripResponse } from "@/types/trip";
+import type { TripResponse } from "@/interfaces/trip";
 import * as styles from "./TripCard.css";
 
 interface TripCardProps {
